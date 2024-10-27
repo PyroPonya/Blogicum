@@ -2,8 +2,6 @@ from django.contrib import admin
 
 from .models import Category, Location, Post
 
-# Я не понял для чего это нужно ~_~
-
 
 class PostAdmin(admin.ModelAdmin):
     list_display = ['title', 'pub_date', 'location', 'category']

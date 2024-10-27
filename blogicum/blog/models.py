@@ -2,7 +2,7 @@ from django.contrib.auth import get_user_model
 from django.db import models
 
 User = get_user_model()
-MAX_LENGTH = 256
+MAX_TITLE_LENGTH = 256
 
 
 class BaseModel(models.Model):
@@ -20,7 +20,7 @@ class BaseModel(models.Model):
 
 class Location(BaseModel):
     name = models.CharField(
-        max_length=MAX_LENGTH,
+        max_length=MAX_TITLE_LENGTH,
         verbose_name='Название места'
     )
 
@@ -34,7 +34,7 @@ class Location(BaseModel):
 
 class Category(BaseModel):
     title = models.CharField(
-        max_length=MAX_LENGTH,
+        max_length=MAX_TITLE_LENGTH,
         verbose_name='Заголовок'
     )
     description = models.TextField(verbose_name='Описание')
@@ -55,7 +55,7 @@ class Category(BaseModel):
 
 class Post(BaseModel):
     title = models.CharField(
-        max_length=MAX_LENGTH,
+        max_length=MAX_TITLE_LENGTH,
         verbose_name='Заголовок'
     )
     text = models.TextField(verbose_name='Текст')
